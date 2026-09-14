@@ -3,8 +3,8 @@ clearvars; clc; close all;
 
 %% Set Paths
 base_dir   = 'F:\UTE_Lab\Pulmonary_ventilation_ute\gitdata';
-input_mat  = fullfile(base_dir, 'img_Jj_2025_12_17.mat');
-result_dir = fullfile(base_dir, 'nex2_results');
+input_mat  = fullfile(base_dir, 'sample_data.mat');
+result_dir = fullfile(base_dir, 'results');
 
 %% 1. Load Raw 4D Input (NEX=2: Index 3 = Exp, Index 4 = Ins)
 fprintf('Loading raw 4D input data...\n');
@@ -12,8 +12,8 @@ raw_data  = load(input_mat);
 var_names = fieldnames(raw_data);
 img_4d    = double(raw_data.(var_names{1}));
 
-img_exp_raw = img_4d(:,:,:,3); % Fixed
-img_ins_raw = img_4d(:,:,:,4); % Moving
+img_exp_raw = img_4d(:,:,:,1); % Fixed
+img_ins_raw = img_4d(:,:,:,2); % Moving
 
 %% 2. Load Processed Results
 fprintf('Loading generated ventilation results...\n');
