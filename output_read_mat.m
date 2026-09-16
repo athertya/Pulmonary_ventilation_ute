@@ -1,4 +1,4 @@
-%% Inspect Jiaji NEX=2 Ventilation Outputs
+%% Inspect sample_data Ventilation Outputs
 clearvars; clc; close all;
 
 %% Set Paths
@@ -6,7 +6,7 @@ base_dir   = 'F:\UTE_Lab\Pulmonary_ventilation_ute\gitdata';
 input_mat  = fullfile(base_dir, 'sample_data.mat');
 result_dir = fullfile(base_dir, 'results');
 
-%% 1. Load Raw 4D Input (NEX=2: Index 3 = Exp, Index 4 = Ins)
+%% 1. Load Raw 4D Input 
 fprintf('Loading raw 4D input data...\n');
 raw_data  = load(input_mat);
 var_names = fieldnames(raw_data);
